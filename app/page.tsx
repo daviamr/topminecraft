@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Top Melhores Servidores de Minecraft',
 };
 
-export function Home() {
+export default function Page() {
   return (
     <main>
       <div className="mt-8">
@@ -39,5 +39,3 @@ export function Home() {
     </main>
   );
 }
-
-export default Home;
