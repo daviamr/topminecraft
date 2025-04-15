@@ -6,8 +6,8 @@ import {
   TableCell,
   TableRow,
 } from "@/components/ui/table"
-import { TableService } from "@/services/table"
 import { Copy } from "lucide-react"
+import Image from "next/image"
 import { useState } from "react"
 
 export const TabelaServidores = () => {
@@ -28,7 +28,7 @@ export const TabelaServidores = () => {
               </p>
             </div>
             <div>
-              <img src="/complex.webp" alt="Complex 1.21" width={468} height={60} />
+              <Image src="/complex.webp" alt="Complex 1.21" width={468} height={60} />
             </div>
             <div className="text-sm text-white bg-[#707070]">
               <button

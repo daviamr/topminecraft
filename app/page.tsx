@@ -1,5 +1,6 @@
 import { FiltroPlataforma } from "@/components/home/FiltroPlataforma";
 import { TabelaServidores } from "@/components/home/TabelaServidores";
+import Image from "next/image";
 
 export const metadata = {
   title: 'Top Melhores Servidores de Minecraft',
@@ -14,7 +15,7 @@ export function Home() {
 
           <div className="flex items-center justify-center gap-2">
             <h1 className="text-4xl/7 uppercase">Top Servidores <span className="block text-5xl font-bold animate-text-gradient">Minecraft</span></h1>
-            <img src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" />
+            <Image src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" />
           </div>
 
           <div>

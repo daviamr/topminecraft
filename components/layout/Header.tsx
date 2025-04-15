@@ -1,11 +1,13 @@
 'use client'
 
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  console.log(isOpen)
 
   return (
     <>
@@ -20,7 +22,7 @@ export function Header() {
           <Link
             className=""
             href="/">
-            <img src="/logo.png" alt="Top Servidores de Minecraft" className="max-h-8" />
+            <Image src="/logo.png" alt="Top Servidores de Minecraft" className="max-h-8" />
           </Link>
         </div>
 
