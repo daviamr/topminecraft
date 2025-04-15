@@ -1,21 +1,19 @@
-'use client'
-
-import { HandleTitle } from "@/core/titles";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import { Poppins } from 'next/font/google';
+import { Providers } from "./providers";
+
+const mainFontFamily = Poppins({
+  weight: ['400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+})
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
-
-  const { title } = HandleTitle();
-
   return (
     <html lang="pt-br">
-      <head>
-        <title>{title}</title>
-      </head>
-      <body>
+      <body className={mainFontFamily.className}>
         <Header/>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

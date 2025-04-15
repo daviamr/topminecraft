@@ -1,69 +1,30 @@
-import { DoorClosed, HandHeart, Handshake, Headset, LogIn, Menu, Server } from "lucide-react";
+'use client'
+
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "../ui/button";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
-      <header className="relative bg-[#262626] w-full h-full">
-        <div className="p-4">
-          <div className="flex justify-between">
-            <Link href="/">HOME TESTE</Link>
+      <header className="bg-white">
 
-            <button
-              className="cursor-pointer"
-              onClick={() => { setIsOpen(prev => !prev) }}>
-              <Menu size={24} />
-            </button>
-
-          </div>
+        <div className="relative flex justify-center items-center py-4 px-4">
+          <button
+            className="absolute left-4 cursor-pointer"
+            onClick={() => { setIsOpen(prev => !prev) }}>
+            <Menu size={28} color="#262626" />
+          </button>
+          <Link
+            className=""
+            href="/">
+            <img src="/logo.png" alt="Top Servidores de Minecraft" className="max-h-8" />
+          </Link>
         </div>
 
       </header>
-      <div
-        className={`
-          absolute h-0 w-full bg-orange-400 duration-300 overflow-hidden
-          ${isOpen && 'h-[300]'}`}>
-        <div className="h-full py-8">
-          <nav>
-            <div className="w-max m-auto">
-              <ul className="flex flex-col gap-4 items-start justify-center">
-                <li className="flex items-center gap-2">
-                  <DoorClosed size={16} />
-                  <Link href="/login" onClick={() => { setIsOpen(prev => !prev) }}>Início</Link>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Server size={16} />
-                  <Link href="/login" onClick={() => { setIsOpen(prev => !prev) }}>Servidores</Link>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Handshake size={16} />
-                  <Link href="/login" onClick={() => { setIsOpen(prev => !prev) }}>Parceria</Link>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Headset size={16} />
-                  <Link href="/login" onClick={() => { setIsOpen(prev => !prev) }}>Contato</Link>
-                </li>
-                <li className="flex items-center gap-2">
-                  <HandHeart size={16} />
-                  <Link href="/login" onClick={() => { setIsOpen(prev => !prev) }}>Doar</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div className="w-max m-auto pt-4">
-            <Button
-              className="flex items-center justify-center gap-2"
-              variant={"secondary"}>
-              <LogIn size={16} />
-              Entrar
-            </Button>
-          </div>
-        </div>
-      </div>
     </>
   )
 }
