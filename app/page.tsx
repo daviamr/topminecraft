@@ -15,7 +15,7 @@ export default function Page() {
 
           <div className="flex items-center justify-center gap-2">
             <h1 className="text-4xl/7 uppercase">Top Servidores <span className="block text-5xl font-bold animate-text-gradient">Minecraft</span></h1>
-            <Image src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" />
+            <Image src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" width={60} height={96}/>
           </div>
 
           <div>

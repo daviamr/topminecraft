@@ -14,21 +14,21 @@ export const FiltroPlataforma = () => {
         <button
           className="flex justify-center items-center gap-2 w-full bg-[color:var(--primary-green)] border-b-2 border-[color:var(--secondary-green)] rounded-[6px] hover:bg-green-600 duration-300 cursor-pointer py-2 font-semibold text-white"
           onClick={() => setPlataform(IFiltroPlataforma.java)}>
-          <Image src="/mouse-icon.svg" alt="Botão Plataforma Java" />
+          <Image src="/mouse-icon.svg" alt="Botão Plataforma Java" width={16} height={22} />
           Java
         </button>
 
         <button
           className="flex justify-center items-center gap-2 w-full bg-[color:var(--primary-red)] border-b-2 border-[color:var(--secondary-red)] rounded-[6px] hover:bg-red-400 duration-300 cursor-pointer py-2 font-semibold text-white"
           onClick={() => setPlataform(IFiltroPlataforma.bedrock)}>
-          <Image src="/gamepad-icon.svg" alt="Botão Plataforma Java" />
+          <Image src="/gamepad-icon.svg" alt="Botão Plataforma Java" width={32} height={16} />
           Bedrock
         </button>
 
         <button
           className="flex justify-center items-center gap-2 w-full bg-[color:var(--primary-orange)] border-b-2 border-[color:var(--secondary-orange)] rounded-[6px] hover:bg-orange-300 duration-300 cursor-pointer py-2 font-semibold text-white"
           onClick={() => setPlataform(IFiltroPlataforma.crossplay)}>
-          <Image src="/globe-icon.svg" alt="Botão Plataforma Java" />
+          <Image src="/globe-icon.svg" alt="Botão Plataforma Java" width={16} height={16} />
           Crossplay
         </button>
       </div>

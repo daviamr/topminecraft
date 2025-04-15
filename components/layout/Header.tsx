@@ -22,7 +22,7 @@ export function Header() {
           <Link
             className=""
             href="/">
-            <Image src="/logo.png" alt="Top Servidores de Minecraft" className="max-h-8" />
+            <Image src="/logo.png" alt="Top Servidores de Minecraft" className="max-h-8" width={112} height={32}/>
           </Link>
         </div>
 

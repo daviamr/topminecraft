@@ -2,9 +2,8 @@
 @import "tw-animate-css";
 
 @font-face {
-  font-family: 'minecraftdois';
-  src: url('../public/fonts/minecrafttt.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'minecraft';
+  src: url('../public/fonts/minecraft.ttf') format('truetype');
   font-style: normal;
 }
 
