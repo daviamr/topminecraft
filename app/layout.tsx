@@ -1,18 +1,18 @@
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import { Poppins } from 'next/font/google';
+import { Poppins } from "next/font/google";
 import { Providers } from "./providers";
 
 const mainFontFamily = Poppins({
-  weight: ['400', '500', '600', '700', '800', '900'],
-  subsets: ['latin'],
-})
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-br">
       <body className={mainFontFamily.className}>
-        <Header/>
         <Providers>{children}</Providers>
       </body>
     </html>
