@@ -1,12 +1,14 @@
-import { FiltroPlataforma } from "@/components/home/FiltroPlataforma";
-import { TabelaServidores } from "@/components/home/TabelaServidores";
+import { FiltroPlataforma } from "@/components/home/filtro-plataforma";
+import { LinhasTabela } from "@/components/home/linhas-tabela";
+import { Table, TableBody } from "@/components/ui/table";
 import Image from "next/image";
 
 export const metadata = {
   title: 'Top Melhores Servidores de Minecraft',
 };
 
-export default function Page() {
+export default async function Page() {
+
   return (
     <main>
       <div className="mt-8">
@@ -14,8 +16,8 @@ export default function Page() {
         <div className="flex flex-col gap-4 px-3">
 
           <div className="flex items-center justify-center gap-2">
-            <h1 className="text-4xl/7 uppercase">Top Servidores <span className="block text-5xl font-bold animate-text-gradient">Minecraft</span></h1>
-            <Image src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" width={60} height={96}/>
+            <h1 className="text-4xl/7 uppercase font-semibold">Top Servidores <span className="block text-5xl font-bold animate-text-gradient">Minecraft</span></h1>
+            <Image src="/steve.webp" alt="Steve Procurando por Servidores de Minecraft" className="max-h-24" width={60} height={96} />
           </div>
 
           <div>
@@ -32,7 +34,11 @@ export default function Page() {
 
         {/*Table*/}
         <div className="mt-8">
-          <TabelaServidores />
+          <Table>
+            <TableBody className="flex flex-col gap-4 bg-white py-4">
+              <LinhasTabela />
+            </TableBody>
+          </Table>
         </div>
 
       </div>
