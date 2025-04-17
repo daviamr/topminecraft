@@ -10,9 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+          "border text-primary-foreground shadow-xs",
         primary_green:
-          "bg-[color:var(--primary-green)] text-white shadow-xs hover:bg-[color:var(--primary-green)]/90",
+          "bg-[color:var(--primary-green)] text-white shadow-xs hover:bg-[color:var(--primary-green)]/90 border-b-2 border-[color:var(--secondary-green)]",
         secondary_green:
           "bg-[color:var(--secondary-green)] text-white shadow-xs hover:bg-[color:var(--secondary-green)]/90",
         primary_red:

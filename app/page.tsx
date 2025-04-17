@@ -1,5 +1,6 @@
 import { FiltroPlataforma } from "@/components/home/filtro-plataforma";
 import { LinhasTabela } from "@/components/home/linhas-tabela";
+import { NovoFiltro } from "@/components/home/novo-filtro";
 import Header from "@/components/layout/Header";
 import { Table, TableBody } from "@/components/ui/table";
 import Image from "next/image";
@@ -25,22 +26,25 @@ export default async function Page() {
               <p>No <span className="font-bold">Top Minecraft Servers</span>, reunimos uma lista dos <span className="font-bold">melhores servidores de Minecraft</span> disponíveis para você se divertir.</p>
               <p className="mt-2">Navegue pela nossa lista e descubra servidores incríveis, até encontrar aquele que se encaixa perfeitamente no seu estilo de jogo!</p>
             </div>
-            <div className="bg-[#262626] py-4 px-2 text-center rounded-b-sm">
+            {/* <div className="bg-[#262626] py-4 px-2 text-center rounded-b-sm">
               <p className="font-semibold text-sm text-white mb-1">
                 Filtrar por Plataforma
               </p>
               <FiltroPlataforma />
-            </div>
+            </div> */}
 
           </div>
-            {/*Table*/}
-            <div className="bg-white py-4 my-8">
+          {/*Table*/}
+          <div className="py-4 my-8">
+            <div className="flex flex-col gap-4">
+              <NovoFiltro />
               <Table>
                 <TableBody>
                   <LinhasTabela />
                 </TableBody>
               </Table>
             </div>
+          </div>
 
         </div>
       </main>
