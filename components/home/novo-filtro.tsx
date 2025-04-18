@@ -10,29 +10,41 @@ export const NovoFiltro = () => {
   console.log(plataform);
 
   return (
-    <div className="bg-white pt-4">
+    <div className="bg-white hidden">
 
       {/*filter by plataform */}
       <div className="px-3">
-        <p className="text-center text-sm font-semibold pb-2">
+        <p className="text-center text-sm font-semibold p1-2">
           Filtre por plataforma
         </p>
-        <div className="flex flex-col gap-2">
-          <Button className="w-full flex items-center gap-2"
+        <div className="grid grid-cols-3 gap-2">
+          <Button className="flex items-center gap-2"
             variant={"primary_green"} type="button">
-            <Image src="/table/mouse.svg" alt="Botão Plataforma Java" width={24} height={24}/>
+            <Image
+              src="/table/mouse.svg"
+              alt="Botão Plataforma Java"
+              width={0} height={0}
+              style={{ width: 'auto', height: '32px' }} />
             Java
           </Button>
 
-          <Button className="w-full flex items-center gap-2"
+          <Button className="flex items-center gap-2"
             variant={"primary_green"} type="button">
-            <Image src="/table/gamepad.svg" alt="Botão Plataforma Bedrock" width={24} height={24} />
+            <Image
+              src="/table/gamepad.svg"
+              alt="Botão Plataforma Bedrock"
+              width={0} height={0}
+              style={{ width: '32px', height: 'auto' }} />
             Bedrock
           </Button>
 
-          <Button className="w-full flex items-center gap-2"
+          <Button className="flex items-center gap-2"
             variant={"primary_green"} type="button">
-            <Image src="/table/globe.svg" alt="Botão Plataforma Crossplay" width={24} height={24} />
+            <Image
+              src="/table/globe.svg"
+              alt="Botão Plataforma Crossplay"
+              width={0} height={0}
+              style={{ width: '32px', height: 'auto' }} />
             Crossplay
           </Button>
         </div>

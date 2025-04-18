@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import RegisterForm from "@/components/register-form";
+import RegisterForm from "@/app/register/components/register-form";
+import { BreadcrumbRegister } from "./components/breadcrumb";
 
 export default function Page() {
   return (
@@ -17,18 +18,7 @@ export default function Page() {
         />
       </div>
       <div className="flex flex-col gap-4 p-6 md:p-10">
-        <div className="flex justify-center gap-2 md:justify-start">
-          <Link className="" href="/">
-            <Button
-              type="button"
-              size="icon"
-              variant="outline"
-              className="cursor-pointer"
-            >
-              <ArrowLeft size={16} />
-            </Button>
-          </Link>
-        </div>
+        <BreadcrumbRegister />
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
             <RegisterForm />

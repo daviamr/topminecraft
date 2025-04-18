@@ -10,7 +10,7 @@ export const LinhasTabela = () => {
 
   return (
     <TableRow>
-      <TableCell className="p-0 border-b-1 border-[#D7D7D7]">
+      <TableCell className="p-0">
         <div className="flex justify-between bg-[#262626] px-3 rounded-t-sm text-base">
           <div className="flex items-center gap-2 text-white">
             <span className="font-regular">#1</span>
@@ -31,11 +31,11 @@ export const LinhasTabela = () => {
         </div>
         <div className="flex flex-col gap-2 px-3 pt-2">
 
-          <div>
+          {/* <div>
             <p className="text-wrap text-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. A, iure voluptas reiciendis eaque quis minima cum temporibus accusamus sed maiores tempore.
             </p>
-          </div>
+          </div> */}
           <div className="flex items-center justify-between">
             <div>
               <p className="font-semibold">Votos: <span className="font-bold text-orange-500">1238</span></p>

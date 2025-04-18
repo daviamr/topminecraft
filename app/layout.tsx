@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Providers } from "./providers";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const mainFontFamily = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -10,10 +11,20 @@ const mainFontFamily = Poppins({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/logo-smc-render.png" sizes="any" />
+      </head>
       <body className={mainFontFamily.className}>
-        <Providers>{children}</Providers>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light" enableSystem disableTransitionOnChange>
+          <Providers>
+            {children}
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
