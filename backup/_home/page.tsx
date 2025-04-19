@@ -1,5 +1,5 @@
 import { FiltroPlataforma } from "@/components/home/filtro-plataforma";
-import { LinhasTabela } from "@/components/home/linhas-tabela";
+import { LinhasTabela } from "@/components/home/tabela-servidores";
 import { NovoFiltro } from "@/components/home/novo-filtro";
 import Header from "@/components/layout/Header";
 import { Table, TableBody } from "@/components/ui/table";

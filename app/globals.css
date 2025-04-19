@@ -25,8 +25,8 @@ body {
 
 .animate-text-gradient {
   background: linear-gradient(45deg, 
-  hsl(35.44deg 100% 53.53%),
-  hsl(35, 100%, 70%),
+  hsl(204, 100%, 39%),
+  hsl(221, 100%, 74%),
   hsl(130, 100%, 37%),
   hsl(120, 100%, 20%)
 );
