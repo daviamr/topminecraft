@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import LoginForm from "@/app/login/components/login-form";
-import { BreadcrumbLogin } from "./components/breadcrumb";
+import LoginForm from "@/app/login/_components/login-form";
+import { BreadcrumbLogin } from "./_components/breadcrumb";
 
 export default function Page() {
   return (

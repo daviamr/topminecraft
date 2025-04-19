@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Eye, EyeClosed } from "lucide-react";
 
-export default function LoginForm({
+export default function RegisterForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"form">) {
@@ -19,14 +19,13 @@ export default function LoginForm({
       <div className="flex flex-col items-center gap-6 text-center">
         <Link href="/login">
           <Image
-            src="/logo.png"
+            src="/logo-smc-render.png"
             alt="Top Servidores de Minecraft"
-            className="max-h-8"
-            width={112}
-            height={32}
+            width={56}
+            height={10}
           />
         </Link>
-        <h1 className="text-2xl font-bold">Entrar na minha conta</h1>
+        <h1 className="text-2xl font-bold">Criar minha conta</h1>
       </div>
       <div className="grid gap-6">
         <div className="grid gap-2">
@@ -34,14 +33,12 @@ export default function LoginForm({
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
         <div className="grid gap-2">
+          <Label htmlFor="username">Nome de usuário</Label>
+          <Input id="username" type="text" placeholder="nick name" required />
+        </div>
+        <div className="grid gap-2">
           <div className="flex items-center">
             <Label htmlFor="password">Senha</Label>
-            <a
-              href="#"
-              className="ml-auto text-sm text-[color:var(--primary-green)] underline-offset-4 hover:underline"
-            >
-              Esqueci minha senha?
-            </a>
           </div>
           <div className="flex items-center gap-1">
             <Input
@@ -78,16 +75,16 @@ export default function LoginForm({
           className="w-full cursor-pointer"
           variant="primary_orange"
         >
-          Login
+          Cadastrar
         </Button>
       </div>
       <div className="text-center text-sm">
-        Ainda não tem uma conta?{" "}
+        Já tem uma conta? {" "}
         <Link
-          href="/register"
+          href="/login"
           className="underline underline-offset-4 text-[color:var(--primary-green)]"
         >
-          Cadastrar
+          Entrar
         </Link>
       </div>
     </form>

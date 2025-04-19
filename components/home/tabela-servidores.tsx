@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Table,
   TableBody,
@@ -9,98 +11,108 @@ import {
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-
 import Image from "next/image"
-import TagBaloon from "../tags"
-import { CopiarIp } from "./copiar-ip"
-import { List } from "lucide-react"
+import { Copy, List } from "lucide-react"
+import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
+import { usarControlador } from "./utils/controlador"
 
 export const TabelaServidores = () => {
+  const cabecalhos = Object.keys(ECabecalhosTabela) as (keyof typeof ECabecalhosTabela)[];
+  const {
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    CopiarIp,
+    ComponenteDrawer } = usarControlador();
+
+  const ip = 'redeip.exemplo.net';
 
   return (
     <>
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#"/>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="/login">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">2</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+      <div className="relative border-b px-4">
+        <List size={24} className="absolute left-4 bottom-[6px]" />
 
-      <Table>
+        <Pagination className="select-none">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <span>
+                Página <span className="font-bold">{currentPage}</span> de {totalPages}
+              </span>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext
+                onClick={() => setCurrentPage((prev) => Math.max(prev + 1))}
+                className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""} />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+
+      <Table className="mb-100">
         <TableHeader>
-          <TableRow>
-            <TableHead><List size={24} /></TableHead>
+          <TableRow className="hidden lg:table-row">
+            {cabecalhos.map((key) => (
+              <TableHead className="px-4" key={ECabecalhosTabela[key]}>
+                {ECabecalhosTabela[key]}</TableHead>
+            ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell className="px-0">
-              <div className="flex justify-between bg-[#262626] px-3 rounded-t-sm text-base">
-                <div className="flex items-center gap-2 text-white">
-                  <span className="font-regular">#1</span>
-                  <p className="font-semibold">Server Name</p>
-                  <div>
-                    <Image src="/country/br.svg" alt="Bandeira do Brasil" width={20} height={14} />
-                  </div>
-                </div>
-                <p className="text-[color:var(--primary-green)] font-semibold">
-                  1.XX.X ~ 1.XX.X
-                </p>
-              </div>
+            <TableCell className="lg:hidden">
               <div>
-                <Image src="/complex.webp" alt="Complex 1.21" width={468} height={60} />
-              </div>
-              <div className="text-base text-white bg-[#707070]">
-                <CopiarIp />
-              </div>
-              <div className="flex flex-col gap-2 px-3 pt-2">
 
-                {/* <div>
-            <p className="text-wrap text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A, iure voluptas reiciendis eaque quis minima cum temporibus accusamus sed maiores tempore.
-            </p>
-          </div> */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold">Votos: <span className="font-bold text-orange-500">1238</span></p>
-                  </div>
-                  <button className="font-bold bg-[color:var(--primary-green)] px-4 py-1 rounded-full text-white">
-                    100/1000 <span className="font-semibold">Jogadores Online</span>
+                {/* server image/gif/ip */}
+                <div>
+                  <Image src='/complex.webp' alt="gif servidor" width={425} height={60} />
+
+
+                  <button
+                    className="flex items-center gap-2 font-semibold text-white cursor-pointer bg-[color:var(--primary-green)] py-1 px-2 rounded-b-sm w-full"
+                    onClick={() => CopiarIp(ip)}>
+                    <Copy size={16} color="white" />
+                    {ip}
                   </button>
+
+                  {ComponenteDrawer(ip)}
                 </div>
-                <div className="flex items-center justify-evenly pb-2">
-                  <TagBaloon tag="MINIGAMES" />
-                  <TagBaloon tag="SKYBLOCK" />
-                  <TagBaloon tag="FULLPVP" />
-                  <TagBaloon tag="RANKUP" />
+
+                {/* server info */}
+                <div className="py-2">
+                  <p className="text-wrap">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque deserunt aut, dolor dicta cum accusantium.
+                  </p>
                 </div>
+
+                {/* server votes */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <p>Votos: <span className="font-bold text-[color:var(--primary-orange)]"> 1390</span>
+                    </p>
+                    |
+                    <p>Último: <span className="font-bold text-[color:var(--primary-orange)]">
+                      39 min~
+                    </span>
+                    </p>
+                  </div>
+                  <p className="font-bold">Site: <a className="underline text-[color:var(--primary-orange)]"> Clique aqui</a></p>
+                </div>
+
               </div>
             </TableCell>
           </TableRow>
         </TableBody>
-      </Table>
+      </Table >
     </>
   )
 }

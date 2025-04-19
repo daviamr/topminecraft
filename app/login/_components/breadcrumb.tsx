@@ -37,7 +37,7 @@ export function BreadcrumbLogin() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Login</BreadcrumbPage>
+          <BreadcrumbPage>Entrar</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

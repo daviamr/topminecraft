@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Eye, EyeClosed } from "lucide-react";
 
-export default function RegisterForm({
+export default function LoginForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"form">) {
@@ -19,14 +19,13 @@ export default function RegisterForm({
       <div className="flex flex-col items-center gap-6 text-center">
         <Link href="/login">
           <Image
-            src="/logo.png"
-            alt="Top Servidores de Minecraft"
-            className="max-h-8"
-            width={112}
-            height={32}
+            src="/logo-smc-render.png"
+            alt="Top Servidores de Minecraft Logo"
+            width={56}
+            height={10}
           />
         </Link>
-        <h1 className="text-2xl font-bold">Cadastrar minha conta</h1>
+        <h1 className="text-2xl font-bold">Acessar minha conta</h1>
       </div>
       <div className="grid gap-6">
         <div className="grid gap-2">
@@ -34,12 +33,14 @@ export default function RegisterForm({
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="username">Nome de usuário</Label>
-          <Input id="username" type="text" placeholder="nick name" required />
-        </div>
-        <div className="grid gap-2">
           <div className="flex items-center">
             <Label htmlFor="password">Senha</Label>
+            <a
+              href="#"
+              className="ml-auto text-sm text-[color:var(--primary-green)] underline-offset-4 hover:underline"
+            >
+              Esqueceu sua senha?
+            </a>
           </div>
           <div className="flex items-center gap-1">
             <Input
@@ -76,16 +77,16 @@ export default function RegisterForm({
           className="w-full cursor-pointer"
           variant="primary_orange"
         >
-          Cadastrar
+          Login
         </Button>
       </div>
       <div className="text-center text-sm">
-        Já tenho uma conta{" "}
+        Ainda não tem uma conta?{" "}
         <Link
-          href="/login"
+          href="/register"
           className="underline underline-offset-4 text-[color:var(--primary-green)]"
         >
-          Login
+          Cadastrar
         </Link>
       </div>
     </form>
