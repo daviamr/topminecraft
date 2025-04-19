@@ -19,7 +19,7 @@ export const NovoFiltro = () => {
         </p>
         <div className="grid grid-cols-3 gap-2">
           <Button className="flex items-center gap-2"
-            variant={"primary_green"} type="button">
+            variant={"primary_green"} type="button" onClick={() => {setPlataform(IFiltroPlataforma.java)}}>
             <Image
               src="/table/mouse.svg"
               alt="Botão Plataforma Java"
