@@ -18,7 +18,7 @@ import {
 import Image from "next/image"
 import { Copy, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
-import { usarControlador } from "./utils/controlador"
+import { useController } from "./utils/controlador"
 
 export const TabelaServidores = () => {
   const cabecalhos = Object.keys(ECabecalhosTabela) as (keyof typeof ECabecalhosTabela)[];
@@ -27,7 +27,7 @@ export const TabelaServidores = () => {
     setCurrentPage,
     totalPages,
     CopiarIp,
-    ComponenteDrawer } = usarControlador();
+    ComponenteDrawer } = useController();
 
   const ip = 'redeip.exemplo.net';
 

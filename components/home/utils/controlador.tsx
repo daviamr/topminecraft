@@ -12,7 +12,7 @@ import {
 import { useState } from "react"
 
 
-export const usarControlador = () => {
+export const useController = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
