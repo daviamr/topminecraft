@@ -1,14 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@font-face {
-  font-family: 'minecraft';
-  src: url('../public/fonts/minecraft.ttf') format('truetype');
-  font-style: normal;
-}
+/*utils*/
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px
 }
 
 @keyframes textGradient {
@@ -61,6 +59,40 @@ body {
   animation: backgroundGradient 5s ease infinite;
 }
 
+.animate-bg-diamond {
+  background: linear-gradient(45deg,
+      hsl(180, 100%, 45%),
+      hsl(195, 100%, 50%),
+      hsl(210, 100%, 40%),
+      hsl(220, 100%, 30%));
+  background-size: 300% 300%;
+  animation: backgroundGradient 5s ease infinite;
+}
+
+.animate-text-diamond {
+  background: linear-gradient(45deg,
+      hsl(180, 100%, 45%),
+      hsl(195, 100%, 50%),
+      hsl(210, 100%, 40%),
+      hsl(220, 100%, 30%));
+  background-size: 300% 300%;
+  background-clip: text;
+  color: transparent;
+  animation: textGradient 5s linear infinite;
+}
+
+/**/
+
+@font-face {
+  font-family: 'minecraft';
+  src: url('../public/fonts/minecraft.ttf') format('truetype');
+  font-style: normal;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -101,6 +133,13 @@ body {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-verde-claro: oklch(0.55 0.19 142.07);
+  --color-verde-escuro: oklch(0.33 0.11 141.5);
+  --color-vermelho-claro: oklch(0.6271 0.2264 29.23);
+  --color-vermelho-escuro: oklch(0.3406 0.1666 28.62);
+  --color-laranja-claro: oklch(0.8036 0.2372 71.04);
+  --color-laranja-escuro: oklch(0.5667 0.2141 68.58);
+  --color-diamante: oklch(0.6316 0.2039 253.57);
 }
 
 :root {

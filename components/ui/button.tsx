@@ -12,17 +12,17 @@ const buttonVariants = cva(
         default:
           "border text-primary-foreground shadow-xs",
         primary_green:
-          "bg-[color:var(--primary-green)] text-white shadow-xs hover:bg-[color:var(--primary-green)]/90 border-b-2 border-[color:var(--secondary-green)]",
+          "bg-verde-claro text-white shadow-xs hover:bg-verde-claro/90 border-b-2 border-verde-escuro",
         secondary_green:
-          "bg-[color:var(--secondary-green)] text-white shadow-xs hover:bg-[color:var(--secondary-green)]/90",
+          "bg-verde-escuro text-white shadow-xs hover:bg-verde-escuro/90",
         primary_red:
-          "bg-[color:var(--primary-red)] text-white shadow-xs hover:bg-[color:var(--primary-red)]/90",
+          "bg-vermelho-claro text-white shadow-xs hover:bg-vermelho-claro/90",
         secondary_red:
-          "bg-[color:var(--secondary-red)] text-white shadow-xs hover:bg-[color:var(--secondary-red)]/90",
+          "bg-vermelho-escuro text-white shadow-xs hover:bg-vermelho-escuro/90",
         primary_orange:
-          "bg-[color:var(--primary-orange)] text-white shadow-xs hover:bg-[color:var(--primary-orange)]/90",
+          "bg-laranja-claro text-white shadow-xs hover:bg-laranja-claro/90",
         secondary_orange:
-          "bg-[color:var(--secondary-orange)] text-white shadow-xs hover:bg-[color:var(--secondary-orange)]/90",
+          "bg-laranja-escuro text-white shadow-xs hover:bg-laranja-escuro/90",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:

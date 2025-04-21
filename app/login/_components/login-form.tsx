@@ -84,7 +84,7 @@ export default function LoginForm({
         Ainda não tem uma conta?{" "}
         <Link
           href="/register"
-          className="underline underline-offset-4 text-[color:var(--primary-green)]"
+          className="underline underline-offset-4 text-verde-claro"
         >
           Cadastrar
         </Link>

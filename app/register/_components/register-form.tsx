@@ -82,7 +82,7 @@ export default function RegisterForm({
         Já tem uma conta? {" "}
         <Link
           href="/login"
-          className="underline underline-offset-4 text-[color:var(--primary-green)]"
+          className="underline underline-offset-4 text-verde-claro"
         >
           Entrar
         </Link>
