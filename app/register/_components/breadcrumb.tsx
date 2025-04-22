@@ -30,7 +30,7 @@ export function BreadcrumbRegister() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuItem>
-                <BreadcrumbLink href="/login">Login</BreadcrumbLink>
+                <BreadcrumbLink href="/login">Entrar</BreadcrumbLink>
                 </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

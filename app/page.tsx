@@ -1,7 +1,9 @@
+import { AccordionFAQ } from "@/components/home/accordion-FAQ";
 import { TabelaServidores } from "@/components/home/tabela-servidores";
 import Header from "@/components/layout/Header";
 import { generateMetadata } from "@/components/SEO";
-import { ChevronsDown, Megaphone } from "lucide-react";
+import { FaqSchema } from "@/components/SEO/FaqSchema";
+import { ChevronsDown, Info, Megaphone } from "lucide-react";
 
 export const metadata = generateMetadata({
   title: 'Encontre servidores de Minecraft de todos os tipos: survival, minigames, bedwars, fullpvp, rankup e muito mais. Servidores brasileiros e internacionais, atualizados constantemente para você jogar!',
@@ -13,8 +15,8 @@ export const metadata = generateMetadata({
 export default function Page() {
 
   return (
-    <div>
-      <Header />
+    <>
+      <FaqSchema />
 
       <main>
         <div>
@@ -44,12 +46,22 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-8 border-t rounded-t-sm">
+          {/* tabela */}
+          <div>
             <TabelaServidores />
+          </div>
+
+          {/* accordions */}
+          <div className="mt-8 p-4 bg-white">
+            <h3 className="d-flex justify-center text-2xl font-semibold mb-4">
+              <Info />
+              Perguntas frenquentes
+            </h3>
+            <AccordionFAQ />
           </div>
 
         </div>
       </main>
-    </div>
+    </>
   );
 }

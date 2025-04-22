@@ -15,8 +15,8 @@ import { useState } from "react"
 export const useController = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const totalItems = 100;
+  const itemsPerPage = 15;
+  const totalItems = 12197;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [open, setOpen] = useState<boolean>(false);
 
@@ -47,6 +47,8 @@ export const useController = () => {
   return {
     currentPage,
     setCurrentPage,
+    itemsPerPage,
+    totalItems,
     totalPages,
     CopiarIp,
     ComponenteDrawer,

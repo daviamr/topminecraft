@@ -26,6 +26,8 @@ export const TabelaServidores = () => {
   const {
     currentPage,
     setCurrentPage,
+    itemsPerPage,
+    totalItems,
     totalPages,
     CopiarIp,
     ComponenteDrawer } = useController();
@@ -34,32 +36,11 @@ export const TabelaServidores = () => {
 
   return (
     <>
-      <div className="relative border-b px-4">
-        <List size={24} className="absolute left-4 bottom-[6px]" />
-
-        <Pagination className="select-none">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
-              />
-            </PaginationItem>
-            <PaginationItem>
-              <span>
-                Página <span className="font-bold">{currentPage}</span> de {totalPages}
-              </span>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext
-                onClick={() => setCurrentPage((prev) => Math.max(prev + 1))}
-                className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""} />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+      <div className="relative px-4 pt-8 border-b bg-white dark:bg-background">
+        <List size={24} className="absolute left-4 bottom-[4px]" />
       </div>
 
-      <Table className="mb-100">
+      <Table className="border-b">
         <TableHeader>
           <TableRow className="hidden lg:table-row">
             {cabecalhos.map((key) => (
@@ -193,7 +174,7 @@ export const TabelaServidores = () => {
                     <div className="d-flex">
                       <p className="font-semibold">Último voto:</p>
                       <span className="flex items-center gap-1 font-normal text-diamante">
-                        Há 39min~
+                        Há 39min
                       </span>
                     </div>
 
@@ -324,6 +305,31 @@ export const TabelaServidores = () => {
           </TableRow>
         </TableBody>
       </Table >
+      <div className="border-b py-4 bg-white dark:bg-background">
+        <p className="text-sm text-center">
+          Mostrando <strong className="text-verde-claro">1-{itemsPerPage}</strong> de <strong className="text-verde-escuro">{totalItems}</strong> resultados.
+        </p>
+        <Pagination className="select-none">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <span>
+                Página <strong className="text-verde-claro">{currentPage}</strong> de <span className="text-verde-escuro">{totalPages}</span>
+              </span>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext
+                onClick={() => setCurrentPage((prev) => Math.max(prev + 1))}
+                className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""} />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
     </>
   )
 }
