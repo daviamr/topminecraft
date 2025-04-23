@@ -1,6 +1,6 @@
 import Image from "next/image";
-import RegisterForm from "@/app/register/_components/register-form";
 import { BreadcrumbRegister } from "./_components/breadcrumb";
+import RegisterForm from "./_components/register-form";
 
 export default function Page() {
   return (

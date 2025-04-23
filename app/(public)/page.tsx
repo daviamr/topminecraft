@@ -1,6 +1,5 @@
 import { AccordionFAQ } from "@/components/home/accordion-FAQ";
 import { TabelaServidores } from "@/components/home/tabela-servidores";
-import Header from "@/components/layout/Header";
 import { generateMetadata } from "@/components/SEO";
 import { FaqSchema } from "@/components/SEO/FaqSchema";
 import { ChevronsDown, Info, Megaphone } from "lucide-react";
@@ -27,10 +26,10 @@ export default function Page() {
               <ChevronsDown size={32} className="absolute text-verde-claro bottom-0 right-4 animate-bounce" />
             </h1>
             <div>
-              <h2 className="mb-2">
+              <h2 className="mb-2 text-justify">
                 Explore seleções <span className="font-bold">atualizadas</span> com os <span className="font-bold">melhores servidores de Minecraft</span> do <span className="font-bold">Brasil</span> e do <span className="font-bold">mundo</span>!
               </h2>
-              <h2 className="relative">
+              <h2 className="relative text-justify">
                 Filtre por modo de jogo como <span className="font-bold">Survival, BedWars, FullPvP, Skyblock, Rankup</span> e muito mais. Encontre seu servidor favorito, entre com um clique e comece sua aventura agora mesmo!
               </h2>
             </div>
@@ -52,7 +51,7 @@ export default function Page() {
           </div>
 
           {/* accordions */}
-          <div className="mt-8 p-4 bg-white">
+          <div className="mt-8 p-4 bg-white dark:bg-[#262626]">
             <h3 className="d-flex justify-center text-2xl font-semibold mb-4">
               <Info />
               Perguntas frenquentes

@@ -18,7 +18,7 @@ import {
 import Image from "next/image"
 import { Copy, ExternalLink, Heart, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
-import { useController } from "./utils/controlador"
+import { useController } from "./controller/controlador"
 import { SeloDiamante } from "./selo-diamante"
 
 export const TabelaServidores = () => {
