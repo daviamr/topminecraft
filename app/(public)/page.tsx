@@ -1,5 +1,5 @@
 import { AccordionFAQ } from "@/components/home/accordion-FAQ";
-import { TabelaServidores } from "@/components/home/tabela-servidores";
+import { TabelaServidores } from "@/components/home/table/tabela-servidores";
 import { generateMetadata } from "@/components/SEO";
 import { FaqSchema } from "@/components/SEO/FaqSchema";
 import { ChevronsDown, Info, Megaphone } from "lucide-react";

@@ -2,8 +2,8 @@
 
 import { IFiltroPlataforma } from "@/enum/FiltroPlataforma";
 import { useState } from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export const NovoFiltro = () => {
   const [plataform, setPlataform] = useState<IFiltroPlataforma>();

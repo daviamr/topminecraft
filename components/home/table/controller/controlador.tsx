@@ -9,6 +9,8 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer"
+import { TableService } from "@/services/table";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react"
 
 
@@ -19,6 +21,7 @@ export const useController = () => {
   const totalItems = 12197;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [open, setOpen] = useState<boolean>(false);
+  const tableService = new TableService();
 
   const CopiarIp = async (ip: string) => {
     await navigator.clipboard.writeText(ip);
@@ -43,8 +46,18 @@ export const useController = () => {
     </>
   )
 
+  const serverQuery = useQuery({
+    queryKey: ["servers"],
+    queryFn: () => tableService.fetchAllServers(),
+    staleTime: 1000 * 60 * 5, // tempo que os dados estão 'frescos'
+    refetchInterval: 1000 * 60 * 1,
+    refetchOnWindowFocus: false,
+
+  })
+
 
   return {
+    serverQuery,
     currentPage,
     setCurrentPage,
     itemsPerPage,

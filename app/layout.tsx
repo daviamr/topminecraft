@@ -1,13 +1,14 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
+import CoreProvider from "./_components/core-provider";
 
 const mainFontFamily = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
-export default function RootLayout({children,
+export default function RootLayout({ children,
 }: Readonly<{ children: React.ReactNode }>) {
 
   return (
@@ -20,7 +21,9 @@ export default function RootLayout({children,
           attribute="class"
           defaultTheme="light"
           enableSystem disableTransitionOnChange>
-          {children}
+          <CoreProvider>
+            {children}
+          </CoreProvider>
         </ThemeProvider>
       </body>
     </html>
