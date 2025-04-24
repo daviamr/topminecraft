@@ -1,9 +1,7 @@
-export function Page() {
+export default function Page() {
   return (
     <>
     página servidor
     </>
   )
 }
-
-export default Page;
