@@ -10,7 +10,6 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer"
 import { IServerStatus } from "@/interfaces/server";
-import { TableService } from "@/services/table";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react"
@@ -23,7 +22,6 @@ export const useController = () => {
   const totalItems = 12197;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [open, setOpen] = useState<boolean>(false);
-  const tableService = new TableService();
 
   const CopiarIp = async (ip: string) => {
     await navigator.clipboard.writeText(ip);
@@ -57,7 +55,6 @@ export const useController = () => {
   // })
 
   //fetch dados no cache
-
   const fetchDados = async () => {
     const res = await axios.get<IServerStatus[]>('/api/dados');
     return res.data;
