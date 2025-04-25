@@ -1,27 +1,50 @@
 export interface IServerStatus {
   online: boolean;
-  ip: string;
+  host: string;
   port: number;
-  hostname: string;
-  version: string;
-  motd: {
-    raw: [string];
-    clean: [string];
-    html: [string];
-  }
-  players: {
+  ip_adress: string;
+  eula_blocked?: boolean;
+  retrieved_at: number;
+  expires_at: number;
+  version?: {
+    name_raw: string;
+    name_clean: string;
+    name_html: string;
+    protocol: number;
+  };
+  players?: {
     online: number;
     max: number;
-    list?: [
+    list: [
       {
-        name: string;
         uuid: string;
+        name_raw: string;
+        name_clean: string;
+        name_html: string;
       }
     ]
+  };
+  motd?: {
+    raw: string;
+    clean: string;
+    html: string;
   },
-  info?: {
-    raw: [string];
-    clean: [string];
-    html: [string];
+  icon: string;
+  mods?: [
+    {
+      name: string;
+      version: string
+    }
+  ];
+  software: string;
+  plugins?: [
+    {
+      name: string;
+      version: string;
+    }
+  ];
+  srv_record?: {
+    host: string;
+    port: number;
   }
 }

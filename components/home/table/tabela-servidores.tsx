@@ -57,7 +57,7 @@ export const TabelaServidores = () => {
         <TableBody>
           {/* versão padrão */}
           {data?.map((server) => (
-            <TableRow key={server.ip}>
+            <TableRow key={server.host}>
               <TableCell className="lg:hidden">
                 <div>
 
@@ -68,9 +68,9 @@ export const TabelaServidores = () => {
 
                     <button
                       className="d-flex font-semibold text-white cursor-pointer py-1 px-2 rounded-b-sm w-full bg-[#262626]"
-                      onClick={() => CopiarIp(server.hostname)}>
+                      onClick={() => CopiarIp(server.host)}>
                       <Copy size={16} color="white" />
-                      {server.hostname}
+                      {server.host}
                     </button>
 
                     {ComponenteDrawer(ip)}
@@ -79,7 +79,7 @@ export const TabelaServidores = () => {
                   {/* server info */}
                   <div className="py-2">
                     <p className="text-wrap">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque deserunt aut, dolor dicta cum accusantium.
+                    <span dangerouslySetInnerHTML={{ __html: server.motd?.html || '' }} />
                     </p>
                   </div>
 

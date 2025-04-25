@@ -9,8 +9,10 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer"
+import { IServerStatus } from "@/interfaces/server";
 import { TableService } from "@/services/table";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { useState } from "react"
 
 
@@ -46,17 +48,29 @@ export const useController = () => {
     </>
   )
 
-  const serverQuery = useQuery({
-    queryKey: ["servers"],
-    queryFn: () => tableService.fetchAllServers(),
-    staleTime: 1000 * 60 * 5, // tempo que os dados estão 'frescos'
-    refetchInterval: 1000 * 60 * 1,
-    refetchOnWindowFocus: false,
+  // const serverQuery = useQuery({
+  //   queryKey: ["servers"],
+  //   queryFn: () => tableService.fetchAllServers(),
+  //   staleTime: 1000 * 60 * 5, // tempo que os dados estão 'frescos'
+  //   refetchInterval: 1000 * 60 * 5,
+  //   refetchOnWindowFocus: false,
+  // })
 
+  //fetch dados no cache
+
+  const fetchDados = async () => {
+    const res = await axios.get<IServerStatus[]>('/api/dados');
+    return res.data;
+  }
+
+  const serverQuery = useQuery({
+    queryKey: ["data"],
+    queryFn: fetchDados,
   })
 
 
   return {
+    // serverQuery,
     serverQuery,
     currentPage,
     setCurrentPage,

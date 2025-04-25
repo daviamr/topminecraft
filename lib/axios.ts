@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: "https://api.mcsrvstat.us/3/",
+  baseURL: "https://api.mcstatus.io/v2/",
   timeout: 5000,
 })
 
