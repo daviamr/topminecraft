@@ -19,7 +19,7 @@ export const useController = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
-  const totalItems = 12197;
+  const [totalItems] = useState<number>(100);
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [open, setOpen] = useState<boolean>(false);
 

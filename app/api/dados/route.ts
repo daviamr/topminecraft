@@ -12,7 +12,6 @@ export async function GET() {
 
   // Verifica se o cache é válido
   if (cachedData && now - lastFetchTime < CACHE_DURATION) {
-    console.log('curiosidade: ', cachedData, now);
     console.log('Dados do cache');
     return NextResponse.json(cachedData);
   }
