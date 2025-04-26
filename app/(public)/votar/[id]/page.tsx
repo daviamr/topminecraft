@@ -8,7 +8,9 @@ import TableListVotes from "../_components/table-list-votes";
 interface VotePageProp {
   id: string;
 }
-
+// vou remover o async pra subir o deploy pra vercel
+// mas o async se eu não me engano corrige um erro passivo no nexstj15 (projeto ainda roda normal, mas da erro no console)
+// se voltar a dar erro, é isso
 export default async function Page({ id }: VotePageProp) {
   return (
     <>
