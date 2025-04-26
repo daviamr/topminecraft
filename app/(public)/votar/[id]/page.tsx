@@ -1,7 +1,5 @@
 import { BreadcrumbVotar } from "../_components/breadcrumb";
 import Image from "next/image";
-import { type Metadata } from "next"; // se quiser usar também depois
-import { type PageConfig } from "next";
 
 import ButtonLike from "../_components/button-like";
 import FormUsername from "../_components/form-username";
