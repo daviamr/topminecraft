@@ -1,12 +1,13 @@
+import { Copyright } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="mt-16 bg-white dark:bg-[#262626] p-4">
       <div className="d-flex">
-        <Image src="/logo-smc-render.png" alt="Logo Top Servidores Minecraft" width={80} height={0} />
+        <Image src="/logo-smc-render.png" alt="Logo Top Servidores Minecraft" width={64} height={0} />
       </div>
-      <div className="border-t mt-8 text-xs">
+      <div className="d-flex flex-col border-t mt-8 text-xs py-2">
         <span>Minecraft é uma marca registrada da Mojang Studios e da Microsoft. Todas as imagens, logotipos e conteúdos relacionados são de propriedade de seus respectivos donos.
         </span>
         <span>
@@ -14,6 +15,15 @@ export function Footer() {
         </span>
         <span>
           Oferecemos uma plataforma para que jogadores descubram e compartilhem servidores multiplayer. Todas as informações dos servidores são enviadas pelos usuários e independem da Mojang ou da Microsoft.</span>
+      </div>
+
+      <div className="py-4">
+        <p className="d-flex justify-center text-xs opacity-75">
+          <Copyright size={14} /> Minecraft Servidores
+        </p>
+        <p className="text-center text-xs opacity-75">
+          2025 | Todos os direitos reservados
+        </p>
       </div>
 
     </footer >
