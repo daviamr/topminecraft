@@ -1,17 +1,16 @@
 import { BreadcrumbVotar } from "../_components/breadcrumb";
 import Image from "next/image";
-
 import ButtonLike from "../_components/button-like";
 import FormUsername from "../_components/form-username";
 import TableListVotes from "../_components/table-list-votes";
 
-interface VotePageProp {
-  id: string;
-}
-// vou remover o async pra subir o deploy pra vercel
-// mas o async se eu não me engano corrige um erro passivo no nexstj15 (projeto ainda roda normal, mas da erro no console)
-// se voltar a dar erro, é isso
-export default function Page({ id }: VotePageProp) {
+// interface VotePageProp {
+//   params: {
+//     id: string;
+//   }
+// }
+
+export default async function Page({ params }: {params: {id: string}}) {
   return (
     <>
       {/* anuncio */}
@@ -24,12 +23,12 @@ export default function Page({ id }: VotePageProp) {
       <div className="p-4">
 
         <div className="w-full p-1">
-          <BreadcrumbVotar name={id} key={id} />
+          <BreadcrumbVotar name={params.id} key={params.id} />
         </div>
 
         <div className="w-full py-2 border-b-1 border-neutral-400 mt-4">
           <h1 className="text-3xl font-extralight">
-            {id}
+            {params.id}
           </h1>
         </div>
 
