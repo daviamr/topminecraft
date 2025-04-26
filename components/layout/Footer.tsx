@@ -1,20 +1,18 @@
 import { Copyright } from "lucide-react";
 import Image from "next/image";
+import { AccordionFooter } from "./components/accordion-footer";
 
 export function Footer() {
   return (
     <footer className="mt-16 bg-white dark:bg-[#262626] p-4">
-      <div className="d-flex">
-        <Image src="/logo-smc-render.png" alt="Logo Top Servidores Minecraft" width={64} height={0} />
+      <div className="d-flex flex-col">
+        <Image src="/logo-smc-render.png" alt="Logo Top Minecraft Servidores" width={64} height={0} />
+        <AccordionFooter />
       </div>
-      <div className="d-flex flex-col border-t mt-8 text-xs py-2">
-        <span>Minecraft é uma marca registrada da Mojang Studios e da Microsoft. Todas as imagens, logotipos e conteúdos relacionados são de propriedade de seus respectivos donos.
-        </span>
+      <div className="d-flex flex-col border-t text-xs pb-2 pt-4 mt-4">
         <span>
           Este site <strong>não é um serviço oficial do Minecraft</strong> e <strong>não é aprovado, afiliado ou associado à Mojang Studios ou à Microsoft</strong> de nenhuma forma.
         </span>
-        <span>
-          Oferecemos uma plataforma para que jogadores descubram e compartilhem servidores multiplayer. Todas as informações dos servidores são enviadas pelos usuários e independem da Mojang ou da Microsoft.</span>
       </div>
 
       <div className="py-4">

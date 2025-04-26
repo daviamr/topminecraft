@@ -39,7 +39,6 @@ export const FaqSchema = () => (
               "text": "Minecraft Java é a versão original para PC, ideal para mods e grandes servidores. Bedrock é a versão multiplataforma (PC, consoles, mobile), ideal para quem quer jogar com amigos em diferentes dispositivos ou com controle."
             }
           },
-          // ...continua com as outras perguntas
         ]
       })
     }} />

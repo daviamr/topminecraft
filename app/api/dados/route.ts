@@ -16,12 +16,18 @@ export async function GET() {
     return NextResponse.json(cachedData);
   }
 
-  console.log('Buscando da API externa');
-  const data = await tableService.fetchAllServers();
+  try {
+    console.log('Buscando da API externa');
+    const data = await tableService.fetchAllServers();
+    // Atualiza o cache
+    cachedData = data;
+    lastFetchTime = now;
 
-  // Atualiza o cache
-  cachedData = data;
-  lastFetchTime = now;
+    return NextResponse.json(data);
 
-  return NextResponse.json(data);
+  } catch (error) {
+    console.log("Erro ao buscar da api externa: ", error);
+    return NextResponse.json({ error: 'Erro ao buscar dados da API' }, { status: 500 });
+  }
+
 }

@@ -23,6 +23,7 @@ export class TableService {
   async fetchAllServers(): Promise<IServerStatus[]> {
     const responses = await Promise.all(hosts.map((host) => this.fetchServerStatus(host))
     );
+    console.log(responses);
     return responses;
   }
 }

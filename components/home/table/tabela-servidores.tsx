@@ -20,6 +20,7 @@ import { Copy, ExternalLink, Heart, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
 import { SeloDiamante } from "./components/selo-diamante"
 import { useController } from "./controller/controlador"
+import Link from "next/link"
 
 export const TabelaServidores = () => {
   const cabecalhos = Object.keys(ECabecalhosTabela) as (keyof typeof ECabecalhosTabela)[];
@@ -63,7 +64,9 @@ export const TabelaServidores = () => {
 
                   {/* server image/gif/ip */}
                   <div>
-                    <Image src='/complex.webp' alt="gif servidor" width={468} height={60} />
+                    <Link href={`/votar/${server.host}`}>
+                      <Image src='/complex.webp' alt="gif servidor" width={468} height={60} />
+                    </Link>
 
 
                     <button
@@ -79,7 +82,7 @@ export const TabelaServidores = () => {
                   {/* server info */}
                   <div className="py-2">
                     <p className="text-wrap">
-                    <span dangerouslySetInnerHTML={{ __html: server.motd?.html || '' }} />
+                      <span dangerouslySetInnerHTML={{ __html: server.motd?.html || '' }} />
                     </p>
                   </div>
 

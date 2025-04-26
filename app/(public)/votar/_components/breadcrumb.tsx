@@ -14,7 +14,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function BreadcrumbVotos() {
+interface BreadcrumbProp {
+  name: string;
+}
+
+export function BreadcrumbVotar({name}: BreadcrumbProp) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -30,14 +34,14 @@ export function BreadcrumbVotos() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuItem>
-                <BreadcrumbLink href="/home">Nome servidor</BreadcrumbLink>
+                <BreadcrumbLink href="/home">{name}</BreadcrumbLink>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>votos</BreadcrumbPage>
+          <BreadcrumbPage>Votar</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
