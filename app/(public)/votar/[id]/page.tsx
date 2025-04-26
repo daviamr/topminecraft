@@ -4,13 +4,14 @@ import ButtonLike from "../_components/button-like";
 import FormUsername from "../_components/form-username";
 import TableListVotes from "../_components/table-list-votes";
 
-// interface VotePageProp {
-//   params: {
-//     id: string;
-//   }
-// }
+interface VotePageProp {
+  id: string;
+}
 
-export default async function Page({ params }: {params: {id: string}}) {
+export default async function Page({ params }: { params: VotePageProp }) {
+
+  const { id } = await params;
+
   return (
     <>
       {/* anuncio */}
@@ -23,12 +24,12 @@ export default async function Page({ params }: {params: {id: string}}) {
       <div className="p-4">
 
         <div className="w-full p-1">
-          <BreadcrumbVotar name={params.id} key={params.id} />
+          <BreadcrumbVotar name={id} key={id} />
         </div>
 
         <div className="w-full py-2 border-b-1 border-neutral-400 mt-4">
           <h1 className="text-3xl font-extralight">
-            {params.id}
+            {id}
           </h1>
         </div>
 
