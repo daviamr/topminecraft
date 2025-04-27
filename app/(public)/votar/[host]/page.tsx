@@ -1,16 +1,12 @@
-import { BreadcrumbVotar } from "../_components/breadcrumb";
 import Image from "next/image";
+import { BreadcrumbVotar } from "../_components/breadcrumb";
 import ButtonLike from "../_components/button-like";
 import FormUsername from "../_components/form-username";
 import TableListVotes from "../_components/table-list-votes";
 
-interface VotePageProp {
-  id: string;
-}
+export default async function Page({params}: {params: Promise<{host: string}>}) {
 
-export default async function Page({ params }: { params: VotePageProp }) {
-
-  const { id } = await params;
+  const host = (await params).host;
 
   return (
     <>
@@ -24,12 +20,12 @@ export default async function Page({ params }: { params: VotePageProp }) {
       <div className="p-4">
 
         <div className="w-full p-1">
-          <BreadcrumbVotar name={id} key={id} />
+          <BreadcrumbVotar name={host} key={host} />
         </div>
 
         <div className="w-full py-2 border-b-1 border-neutral-400 mt-4">
           <h1 className="text-3xl font-extralight">
-            {id}
+            {host}
           </h1>
         </div>
 
