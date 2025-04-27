@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function BreadcrumbRegister() {
+export function BreadcrumbServer({server}: {server: string}) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -30,14 +30,14 @@ export function BreadcrumbRegister() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuItem>
-                <BreadcrumbLink href="/login">Entrar</BreadcrumbLink>
+                <BreadcrumbLink href="/minecraft-servers">Servidores Minecraft</BreadcrumbLink>
                 </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Cadastrar</BreadcrumbPage>
+          <BreadcrumbPage>{server}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

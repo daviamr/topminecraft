@@ -19,7 +19,7 @@ import Image from "next/image"
 import { Copy, ExternalLink, Heart, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
 import { SeloDiamante } from "./components/selo-diamante"
-import { useController } from "./controller/controlador"
+import { useController } from "./controller/controller"
 import Link from "next/link"
 
 export const TabelaServidores = () => {
@@ -64,7 +64,7 @@ export const TabelaServidores = () => {
 
                   {/* server image/gif/ip */}
                   <div>
-                    <Link href={`/votar/${server.host}`}>
+                    <Link href={`/minecraft-server/${server.host}`}>
                       <Image src='/complex.webp' alt="gif servidor" width={468} height={60} />
                     </Link>
 
