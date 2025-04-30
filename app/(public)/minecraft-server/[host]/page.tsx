@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TableService } from "@/services/table";
+import { TableService } from "@/services/tableService";
 // import { SeloDiamante } from "@/components/home/table/components/selo-diamante";
 import { BreadcrumbServer } from "../_components/breadcrumb";
 import TagBaloon from "@/components/tags";

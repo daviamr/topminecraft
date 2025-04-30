@@ -15,9 +15,9 @@ export default function Page() {
   return (
     <>
       <main>
-        <div>
+        <div className="max-w-7xl m-auto">
           {/* main */}
-          <div className="flex flex-col gap-4 p-4 mt-8">
+          <div className="flex flex-col gap-4 p-4 mt-8 md:p-8 xl:px-0">
             <h1 className="relative uppercase font-semibold text-5xl/11">
               Descubra os <span className="font-bold animate-text-gradient">Melhores Servidores de Minecraft</span> para Jogar Agora!
               <ChevronsDown size={32} className="absolute text-verde-claro bottom-0 right-4 animate-bounce" />
@@ -33,7 +33,7 @@ export default function Page() {
           </div>
 
           {/* anuncios */}
-          <div className="flex flex-col gap-2 p-4 border mt-8">
+          <div className="flex flex-col gap-2 p-4 border-t border-b mt-8 md:p-8 xl:px-0">
             <div className="animate-background-gradient p-1 rounded-t-sm">
               <Megaphone size={18} color="white" />
             </div>
@@ -48,14 +48,16 @@ export default function Page() {
           </div>
 
           {/* accordions */}
-          <div className="mt-8 p-4 bg-white dark:bg-[#262626]">
+
+        </div>
+        <div className="mt-8 p-4 bg-white dark:bg-[#262626] md:p-8 xl:px-0">
+          <div className="max-w-7xl m-auto">
             <h3 className="d-flex justify-center text-2xl font-semibold mb-4">
               <Info />
               Perguntas frenquentes
             </h3>
             <AccordionFAQ />
           </div>
-
         </div>
       </main>
     </>

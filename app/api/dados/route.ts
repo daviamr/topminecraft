@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { IServerStatus } from '@/interfaces/server'
-import { TableService } from '@/services/table';
+import { TableService } from '@/services/tableService';
 
 let cachedData: IServerStatus[] | null = null;
 let lastFetchTime = 0;

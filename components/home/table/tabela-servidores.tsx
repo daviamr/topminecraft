@@ -19,7 +19,7 @@ import Image from "next/image"
 import { Copy, ExternalLink, Heart, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
 import { SeloDiamante } from "./components/selo-diamante"
-import { useController } from "./controller/controller"
+import { useController } from "./controller"
 import Link from "next/link"
 
 export const TabelaServidores = () => {
@@ -42,7 +42,7 @@ export const TabelaServidores = () => {
   return (
     <>
       <div className="relative px-4 pt-8 border-b bg-white dark:bg-background">
-        <List size={24} className="absolute left-4 bottom-[4px]" />
+        <List size={24} className="absolute left-4 bottom-[4px] md:left-8" />
       </div>
 
       <Table className="border-b">
@@ -59,7 +59,7 @@ export const TabelaServidores = () => {
           {/* versão padrão */}
           {data?.map((server) => (
             <TableRow key={server.host}>
-              <TableCell className="lg:hidden">
+              <TableCell className="lg:hidden md:px-8">
                 <div>
 
                   {/* server image/gif/ip */}
@@ -122,7 +122,7 @@ export const TabelaServidores = () => {
           ))}
           {/* versão diamond */}
           <TableRow>
-            <TableCell className="lg:hidden bg-white dark:bg-background">
+            <TableCell className="lg:hidden bg-white dark:bg-background md:px-8">
               <div className="relative pt-8 pb-4 rounded-sm">
                 {/* selo diamond */}
                 <p
