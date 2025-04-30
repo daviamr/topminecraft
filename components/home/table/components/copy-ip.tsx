@@ -3,7 +3,7 @@
 import { Copy } from "lucide-react";
 import { useState } from "react";
 
-export const CopiarIp = () => {
+export const CopyIp = () => {
   const [text, setText] = useState<string>('server.example-ip.net');
 
   return (

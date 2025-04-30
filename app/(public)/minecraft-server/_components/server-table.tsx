@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
-export const TabelaServidor = () => {
+export const ServerTable = () => {
   return (
     <div {...{ itemScope: true, itemType: "https://schema.org/GameServer" }}>
       <Table>

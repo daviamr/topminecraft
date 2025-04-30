@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 
-export function SeloDiamante({style}: {style?: string} ) {
+export function DiamondSeal({style}: {style?: string} ) {
   return (
     <div
       className={`flex items-center gap-1 absolute top-1 right-0 px-4 rounded-sm animate-bg-diamond select-none ${style}`}>

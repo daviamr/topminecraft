@@ -4,10 +4,10 @@ import { AccordionFooter } from "./components/accordion-footer";
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-white dark:bg-[#262626] p-4 md:px-8 xl:px-0">
+    <footer className="mt-16 bg-white dark:bg-[#262626] p-4 md:px-8 2xl:px-0">
       <div className="max-w-7xl m-auto">
         <div className="d-flex flex-col">
-          <Image src="/logo-smc-render.png" alt="Logo Top Minecraft Servidores" width={64} height={0} />
+          <Image src="/logo-smc.webp" alt="Logo Top Minecraft Servidores" width={64} height={0} />
           <AccordionFooter />
         </div>
         <div className="d-flex flex-col border-t text-xs pb-2 pt-4 mt-4">

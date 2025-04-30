@@ -3,7 +3,7 @@ import { TableService } from "@/services/tableService";
 // import { SeloDiamante } from "@/components/home/table/components/selo-diamante";
 import { BreadcrumbServer } from "../_components/breadcrumb";
 import TagBaloon from "@/components/tags";
-import { TabelaServidor } from "../_components/tabela-servidor";
+import { ServerTable } from "../_components/server-table";
 
 export default async function Page({ params }: { params: Promise<{ host: string }> }) {
 
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<{ host: string 
 
           {/* infos */}
           <div className="px-2 py-4">
-            <TabelaServidor />
+            <ServerTable />
           </div>
           {/* tags */}
           <div>

@@ -23,7 +23,7 @@ export const useController = () => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [open, setOpen] = useState<boolean>(false);
 
-  const CopiarIp = async (ip: string) => {
+  const CopyIp = async (ip: string) => {
     await navigator.clipboard.writeText(ip);
     setOpen(true);
   }
@@ -74,7 +74,7 @@ export const useController = () => {
     itemsPerPage,
     totalItems,
     totalPages,
-    CopiarIp,
+    CopyIp,
     ComponenteDrawer,
   }
 }

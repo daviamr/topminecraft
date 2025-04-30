@@ -8,30 +8,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
 import Image from "next/image"
 import { Copy, ExternalLink, Heart, List } from "lucide-react"
 import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
-import { SeloDiamante } from "./components/selo-diamante"
+import { DiamondSeal } from "./components/diamond-seal"
 import { useController } from "./controller"
 import Link from "next/link"
 
-export const TabelaServidores = () => {
+export const ServersTable = () => {
   const cabecalhos = Object.keys(ECabecalhosTabela) as (keyof typeof ECabecalhosTabela)[];
   const {
     serverQuery: { data, isLoading, error },
-    currentPage,
-    setCurrentPage,
-    itemsPerPage,
-    totalItems,
-    totalPages,
-    CopiarIp,
+    CopyIp,
     ComponenteDrawer } = useController();
 
   if (isLoading) return <div>Carregando...</div>
@@ -71,7 +59,7 @@ export const TabelaServidores = () => {
 
                     <button
                       className="d-flex font-semibold text-white cursor-pointer py-1 px-2 rounded-b-sm w-full bg-[#262626]"
-                      onClick={() => CopiarIp(server.host)}>
+                      onClick={() => CopyIp(server.host)}>
                       <Copy size={16} color="white" />
                       {server.host}
                     </button>
@@ -133,7 +121,7 @@ export const TabelaServidores = () => {
                   </span>
                   Complex Mc
                 </p>
-                <SeloDiamante />
+                <DiamondSeal />
 
                 {/* server image/gif/ip */}
                 <div>
@@ -142,7 +130,7 @@ export const TabelaServidores = () => {
 
                   <button
                     className="d-flex cursor-pointer py-1 px-2 rounded-b-sm w-full animate-bg-diamond"
-                    onClick={() => CopiarIp(ip)}>
+                    onClick={() => CopyIp(ip)}>
                     <Copy size={16} color="white" />
                     <span className="font-semibold text-white drop-shadow-[0_0_4px_white]">
                       {ip}
@@ -196,31 +184,6 @@ export const TabelaServidores = () => {
           </TableRow>
         </TableBody>
       </Table >
-      <div className="border-b py-4 bg-white dark:bg-background">
-        <p className="text-sm text-center">
-          Mostrando <strong className="text-verde-claro">1-{itemsPerPage}</strong> de <strong className="text-verde-escuro">{totalItems}</strong> resultados.
-        </p>
-        <Pagination className="select-none">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
-              />
-            </PaginationItem>
-            <PaginationItem>
-              <span>
-                Página <strong className="text-verde-claro">{currentPage}</strong> de <span className="text-verde-escuro">{totalPages}</span>
-              </span>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext
-                onClick={() => setCurrentPage((prev) => Math.max(prev + 1))}
-                className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""} />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
     </>
   )
 }

@@ -10,14 +10,14 @@ export function Header() {
 
   return (
 
-    <header className="bg-white dark:bg-[#262626] py-2 px-4 md:px-8 xl:px-0">
+    <header className="bg-white dark:bg-[#262626] py-2 px-4 md:px-8 2xl:px-0"> 
 
       <div className="flex items-center justify-between lg:max-w-7xl lg:m-auto">
 
         <div className="flex gap-2 lg:items-center lg:gap-8">
           <Link href="/">
             <Image
-              src="/logo-smc-render.png"
+              src="/logo-smc.webp"
               alt="Top Servidores de Minecraft"
               width={44}
               height={0}
