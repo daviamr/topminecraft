@@ -19,7 +19,7 @@ export default function Page() {
       <main>
         <div className="relative max-w-7xl m-auto">
           {/* anuncios desktop aside*/}
-          <aside className="hidden xl:block fixed top-37 z-10 right-2">
+          <aside className="hidden xl:block fixed top-20 z-10 right-2">
             <div className="h-100 w-25 bg-gray-500 rounded-sm flex flex-col gap-4 items-center justify-center">
               <p className="text-gray-200 text-base rounded-t-sm text-center">Anuncie Aqui</p>
               <p className="text-gray-200 text-base rounded-t-sm text-center">100x400</p>
@@ -29,7 +29,7 @@ export default function Page() {
           {/* main */}
           <div className="flex flex-col gap-4 p-4 mt-8
           md:p-8 md:text-center
-          lg:mx-auto
+          lg:mx-auto lg:my-16
           xl:text-left xl:w-full xl:mx-0 xl:flex xl:flex-row xl:justify-between
           2xl:px-0">
             <div className="lg:max-w-165">
@@ -67,7 +67,7 @@ export default function Page() {
           </div>
 
           {/* tabela */}
-          <div className="lg:flex lg:gap-4">
+          <div className="md:p-8 lg:flex lg:gap-4 2xl:px-0">
             <DesktopFilters />
             <ServersTable />
           </div>

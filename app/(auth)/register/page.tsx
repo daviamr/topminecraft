@@ -8,7 +8,7 @@ export default function Page() {
       <div className="relative hidden bg-muted lg:block">
         <Image
           fill
-          src="/login/background-auth.webp"
+          src="/auth/background-auth.webp"
           alt="Image"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />

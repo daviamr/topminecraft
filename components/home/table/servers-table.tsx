@@ -10,13 +10,12 @@ import {
 } from "@/components/ui/table"
 import Image from "next/image"
 import { Copy, ExternalLink, Heart, List } from "lucide-react"
-import { ECabecalhosTabela } from "@/enum/CabecalhosTabela"
 import { DiamondSeal } from "./components/diamond-seal"
 import { useController } from "./controller"
 import Link from "next/link"
+import { DesktopTableRow } from "./components/desktop-table-row"
 
 export const ServersTable = () => {
-  const cabecalhos = Object.keys(ECabecalhosTabela) as (keyof typeof ECabecalhosTabela)[];
   const {
     serverQuery: { data, isLoading, error },
     CopyIp,
@@ -29,21 +28,20 @@ export const ServersTable = () => {
 
   return (
     <>
-      <div className="relative px-4 pt-8 border-b bg-white dark:bg-background">
+      <div className="relative px-4 pt-8 border-b bg-white dark:bg-background lg:hidden">
         <List size={24} className="absolute left-4 bottom-[4px] md:left-8" />
       </div>
 
       <Table className="border-b">
-        <TableHeader>
+        <TableHeader className="bg-white dark:bg-[#262626]">
           <TableRow className="hidden lg:table-row">
-            {cabecalhos.map((key) => (
-              <TableHead className="px-4" key={ECabecalhosTabela[key]}>
-                {ECabecalhosTabela[key]}
-              </TableHead>
-            ))}
+            <TableHead className="px-4 rounded-t-sm overflow-hidden">
+              <List size={24} />
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
+          {Array.from({length: 15}, (_, i) => (<DesktopTableRow key={i.toString()}/>))}
           {/* versão padrão */}
           {data?.map((server) => (
             <TableRow key={server.host}>

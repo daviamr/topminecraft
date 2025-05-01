@@ -19,7 +19,7 @@ export default function LoginForm({
       <div className="flex flex-col items-center gap-6 text-center">
         <Link href="/login">
           <Image
-            src="/logo-smc-render.png"
+            src="/logo-smc.webp"
             alt="Top Servidores de Minecraft Logo"
             width={56}
             height={10}

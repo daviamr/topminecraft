@@ -19,7 +19,7 @@ export default function RegisterForm({
       <div className="flex flex-col items-center gap-6 text-center">
         <Link href="/login">
           <Image
-            src="/logo-smc-render.png"
+            src="/logo-smc.webp"
             alt="Top Servidores de Minecraft"
             width={56}
             height={10}
